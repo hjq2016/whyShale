@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<inceptionYear>2021</inceptionYear>
+
+	<groupId>com.hjq</groupId>
+	<artifactId>whyShare-all</artifactId>
+	<version>${revision}</version>
+	<packaging>pom</packaging>
+
+	<name>whyShare</name>
+	<description>a websit that share knowledge</description>
+
+	<scm>
+		<url>git@github.com:hjq2016/whyShale.git</url>
+		<connection>scm:git@github.com:hjq2016/whyShale.git</connection>
+		<developerConnection>scm:git@github.com:hjq2016/whyShale.git</developerConnection>
+		<tag>whyShare-all-${revision}</tag>
+	</scm>
+
+	<mailingLists>
+		<mailingList>
+			<name>nothing</name>
+		</mailingList>
+	</mailingLists>
+
+	<developers>
+		<developer>
+			<id>hjq</id>
+			<name>hjq</name>
+			<url></url>
+			<email>924946361@qq.com</email>
+		</developer>
+	</developers>
+
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<organization>
+		<name>nothing</name>
+		<url></url>
+	</organization>
+
+	<issueManagement>
+		<system>github</system>
+		<url>https://github.com/hjq2016/whyShale/issues</url>
+	</issueManagement>
+
+	<properties>
+		<revision>0.0.1</revision>
+		<java.version>1.8</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<!-- Maven properties -->
+		<maven.test.skip>false</maven.test.skip>
+		<maven.javadoc.skip>true</maven.javadoc.skip>
+		<sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
+	</properties>
+	<!-- 子模块管理 -->
+	<modules>
+		<module></module>
+	</modules>
+
+	<!-- 所有的子项目默认依赖 -->
+	<dependencies>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
