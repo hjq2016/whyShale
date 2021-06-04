@@ -63,10 +63,12 @@
 		<maven.test.skip>false</maven.test.skip>
 		<maven.javadoc.skip>true</maven.javadoc.skip>
 		<sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
+
+		<spring-boot-dependencies.version>2.2.9.RELEASE</spring-boot-dependencies.version>
 	</properties>
 	<!-- 子模块管理 -->
 	<modules>
-		<module></module>
+		<module>user-service</module>
 	</modules>
 
 	<!-- 所有的子项目默认依赖 -->
@@ -82,7 +84,11 @@
 			<artifactId>mockito-core</artifactId>
 			<scope>test</scope>
 		</dependency>
-
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -93,5 +99,20 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<!-- Import dependency management from Spring Boot -->
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>${spring-boot-dependencies.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+
 
 </project>
