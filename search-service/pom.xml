@@ -8,10 +8,10 @@
 		<version>${revision}</version>
 	</parent>
 
-	<artifactId>user-service</artifactId>
+	<artifactId>search-service</artifactId>
 	<packaging>jar</packaging>
-	<name>user-service ${project.version}</name>
-	<description>用户管理 注册登录 用户 角色 权限</description>
+	<name>search-service ${project.version}</name>
+	<description>搜索业务，待考虑与业界实现方式</description>
 
 
 	<dependencies>

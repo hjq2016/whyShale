@@ -8,10 +8,10 @@
 		<version>${revision}</version>
 	</parent>
 
-	<artifactId>user-service</artifactId>
+	<artifactId>combination-service</artifactId>
 	<packaging>jar</packaging>
-	<name>user-service ${project.version}</name>
-	<description>用户管理 注册登录 用户 角色 权限</description>
+	<name>combination-service ${project.version}</name>
+	<description>整合模块 目前主要用于文章和提问</description>
 
 
 	<dependencies>

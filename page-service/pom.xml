@@ -8,10 +8,10 @@
 		<version>${revision}</version>
 	</parent>
 
-	<artifactId>user-service</artifactId>
+	<artifactId>page-service</artifactId>
 	<packaging>jar</packaging>
-	<name>user-service ${project.version}</name>
-	<description>用户管理 注册登录 用户 角色 权限</description>
+	<name>page-service ${project.version}</name>
+	<description>文章模块</description>
 
 
 	<dependencies>

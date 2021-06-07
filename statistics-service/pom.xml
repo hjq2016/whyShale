@@ -8,10 +8,10 @@
 		<version>${revision}</version>
 	</parent>
 
-	<artifactId>user-service</artifactId>
+	<artifactId>statistics-service</artifactId>
 	<packaging>jar</packaging>
-	<name>user-service ${project.version}</name>
-	<description>用户管理 注册登录 用户 角色 权限</description>
+	<name>statistics-service ${project.version}</name>
+	<description>统计模块 热榜等</description>
 
 
 	<dependencies>
