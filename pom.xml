@@ -64,9 +64,9 @@
 		<maven.javadoc.skip>true</maven.javadoc.skip>
 		<sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
 
-		<spring-boot-dependencies.version>2.2.5.RELEASE</spring-boot-dependencies.version>
-		<spring.cloud-version>Hoxton.SR3</spring.cloud-version>
-		<com.alibaba.cloud.version>2.2.1.RELEASE</com.alibaba.cloud.version>
+		<spring-boot-dependencies.version>2.3.2.RELEASE</spring-boot-dependencies.version>
+		<spring.cloud-version>Hoxton.SR10</spring.cloud-version>
+		<com.alibaba.cloud.version>2.2.5.RELEASE</com.alibaba.cloud.version>
 	</properties>
 	<!-- 子模块管理 -->
 	<modules>
@@ -99,16 +99,12 @@
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
-
-
-		<!--<dependency>-->
-			<!--<groupId>org.springframework.cloud</groupId>-->
-			<!--<artifactId>spring-cloud-starter-config</artifactId>-->
-		<!--</dependency>-->
-		<!--<dependency>-->
-			<!--<groupId>org.springframework.cloud</groupId>-->
-			<!--<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>-->
-		<!--</dependency>-->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.72</version>
+			<!--<optional>true</optional>-->
+		</dependency>
 	</dependencies>
 
 	<build>
