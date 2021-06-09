@@ -6,6 +6,7 @@
 		<groupId>com.hjq</groupId>
 		<artifactId>whyShare-all</artifactId>
 		<version>${revision}</version>
+		<relativePath>../pom.xml</relativePath>
 	</parent>
 
 	<artifactId>page-service</artifactId>

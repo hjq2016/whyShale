@@ -67,19 +67,9 @@
 		<spring-boot-dependencies.version>2.3.2.RELEASE</spring-boot-dependencies.version>
 		<spring.cloud-version>Hoxton.SR10</spring.cloud-version>
 		<com.alibaba.cloud.version>2.2.5.RELEASE</com.alibaba.cloud.version>
+		<knife4j.version>2.0.5</knife4j.version>
+		<maven-flatten-version>1.1.0</maven-flatten-version>
 	</properties>
-	<!-- 子模块管理 -->
-	<modules>
-		<module>user-service</module>
-		<module>page-service</module>
-		<module>home-service</module>
-		<module>search-service</module>
-		<module>statistics-service</module>
-		<module>ask-service</module>
-		<module>combination-service</module>
-		<module>gateway-service</module>
-		<module>nacos-service</module>
-	</modules>
 
 	<!-- 所有的子项目默认依赖 -->
 	<dependencies>
@@ -113,6 +103,34 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>flatten-maven-plugin</artifactId>
+				<version>${maven-flatten-version}</version>
+				<executions>
+					<execution>
+						<id>flatten</id>
+						<phase>process-resources</phase>
+						<goals>
+							<goal>flatten</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>flatten.clean</id>
+						<phase>clean</phase>
+						<goals>
+							<goal>clean</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<updatePomFile>true</updatePomFile>
+					<flattenMode>resolveCiFriendliesOnly</flattenMode>
+					<pomElements>
+						<dependencies>expand</dependencies>
+					</pomElements>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
@@ -136,16 +154,58 @@
 			<dependency>
 				<groupId>com.alibaba.cloud</groupId>
 				<artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
-				<version>${com.alibaba.cloud.version}</version>
+				<version>
+					${com.alibaba.cloud.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.alibaba.cloud</groupId>
 				<artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
 				<version>${com.alibaba.cloud.version}</version>
 			</dependency>
+            <!--swagger-->
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-micro-spring-boot-starter</artifactId>
+                <version>${knife4j.version}</version>
+            </dependency>
+
+			<dependency>
+				<groupId>com.hjq</groupId>
+				<artifactId>zlt-swagger2-spring-boot-starter</artifactId>
+				<version>${project.version}</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
+	<!--&lt;!&ndash; 子模块管理 &ndash;&gt;-->
+	<!--<modules>-->
+		<!--<module>user-service</module>-->
+		<!--<module>page-service</module>-->
+		<!--<module>home-service</module>-->
+		<!--<module>search-service</module>-->
+		<!--<module>statistics-service</module>-->
+		<!--<module>ask-service</module>-->
+		<!--<module>combination-service</module>-->
+		<!--<module>gateway-service</module>-->
+		<!--<module>nacos-service</module>-->
+		<!--<module>hjq-busines</module>-->
+		<!--<module>hjq-commons</module>-->
+	<!--</modules>-->
+
+	<!-- 子模块管理 -->
+	<modules>
+		<module>user-service</module>
+		<module>page-service</module>
+		<module>home-service</module>
+		<module>search-service</module>
+		<module>statistics-service</module>
+		<module>ask-service</module>
+		<module>combination-service</module>
+		<module>gateway-service</module>
+		<module>nacos-service</module>
+		<module>hjq-busines</module>
+		<module>hjq-commons</module>
+	</modules>
 
 
 </project>
