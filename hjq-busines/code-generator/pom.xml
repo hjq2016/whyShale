@@ -8,23 +8,12 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
     <artifactId>code-generator</artifactId>
+    <packaging>jar</packaging>
 
     <dependencies>
-        <!--<dependency>-->
-            <!--<groupId>com.zlt</groupId>-->
-            <!--<artifactId>zlt-config</artifactId>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>com.zlt</groupId>-->
-            <!--<artifactId>zlt-common-spring-boot-starter</artifactId>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>com.zlt</groupId>-->
-            <!--<artifactId>zlt-db-spring-boot-starter</artifactId>-->
-        <!--</dependency>-->
         <dependency>
             <groupId>com.hjq</groupId>
-            <artifactId>zlt-swagger2-spring-boot-starter</artifactId>
+            <artifactId>hjq-common-collection</artifactId>
         </dependency>
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
@@ -38,19 +27,19 @@
             <!--<groupId>org.springframework.boot</groupId>-->
             <!--<artifactId>spring-boot-starter-actuator</artifactId>-->
         <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>commons-io</groupId>-->
-            <!--<artifactId>commons-io</artifactId>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+        </dependency>
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
 
-        <!--<dependency>-->
-            <!--<groupId>org.apache.velocity</groupId>-->
-            <!--<artifactId>velocity</artifactId>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>org.apache.velocity</groupId>
+            <artifactId>velocity</artifactId>
+        </dependency>
         <!--<dependency>-->
             <!--<groupId>org.apache.commons</groupId>-->
             <!--<artifactId>commons-configuration2</artifactId>-->
@@ -67,13 +56,6 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
         <finalName>${project.artifactId}</finalName>

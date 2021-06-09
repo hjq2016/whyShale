@@ -12,6 +12,6 @@
     <packaging>pom</packaging>
     <modules>
         <!-- 代码生成器 -->
-        <module>zlt-swagger2-spring-boot-starter</module>
+        <module>hjq-common-collection</module>
     </modules>
 </project>

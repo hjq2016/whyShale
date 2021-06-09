@@ -69,6 +69,14 @@
 		<com.alibaba.cloud.version>2.2.5.RELEASE</com.alibaba.cloud.version>
 		<knife4j.version>2.0.5</knife4j.version>
 		<maven-flatten-version>1.1.0</maven-flatten-version>
+		<druid-starter>1.1.22</druid-starter>
+		<mybatis-plus-boot-starter.version>3.4.0</mybatis-plus-boot-starter.version>
+		<poi.version>4.1.1</poi.version>
+		<docker-maven-plugin.version>1.2.2</docker-maven-plugin.version>
+		<easypoi.version>4.1.3</easypoi.version>
+		<velocity.version>1.7</velocity.version>
+		<hutool.version>5.1.4</hutool.version>
+		<commons-io.version>2.6</commons-io.version>
 	</properties>
 
 	<!-- 所有的子项目默认依赖 -->
@@ -93,7 +101,7 @@
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
 			<version>1.2.72</version>
-			<!--<optional>true</optional>-->
+			<optional>true</optional>
 		</dependency>
 	</dependencies>
 
@@ -132,6 +140,21 @@
 				</configuration>
 			</plugin>
 		</plugins>
+
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-maven-plugin</artifactId>
+					<version>${spring-boot-dependencies.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>com.spotify</groupId>
+					<artifactId>docker-maven-plugin</artifactId>
+					<version>${docker-maven-plugin.version}</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
 	</build>
 
 	<dependencyManagement>
@@ -171,26 +194,67 @@
 
 			<dependency>
 				<groupId>com.hjq</groupId>
-				<artifactId>zlt-swagger2-spring-boot-starter</artifactId>
-				<version>${project.version}</version>
+				<artifactId>hjq-common-collection</artifactId>
+				<version>${revision}</version>
+			</dependency>
+
+			<!-- druid 官方 starter -->
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>druid-spring-boot-starter</artifactId>
+				<version>${druid-starter}</version>
+			</dependency>
+			<!-- mybatis-plus start -->
+			<dependency>
+				<groupId>com.baomidou</groupId>
+				<artifactId>mybatis-plus-boot-starter</artifactId>
+				<version>${mybatis-plus-boot-starter.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.baomidou</groupId>
+				<artifactId>mybatis-plus-extension</artifactId>
+				<version>${mybatis-plus-boot-starter.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.baomidou</groupId>
+				<artifactId>mybatis-plus</artifactId>
+				<version>${mybatis-plus-boot-starter.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.poi</groupId>
+				<artifactId>poi</artifactId>
+				<version>${poi.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.poi</groupId>
+				<artifactId>poi-ooxml</artifactId>
+				<version>${poi.version}</version>
+			</dependency>
+            <!--   easypoi   -->
+            <dependency>
+                <groupId>cn.afterturn</groupId>
+                <artifactId>easypoi-base</artifactId>
+                <version>${easypoi.version}</version>
+            </dependency>
+			<dependency>
+				<groupId>org.apache.velocity</groupId>
+				<artifactId>velocity</artifactId>
+				<version>${velocity.version}</version>
+			</dependency>
+			<!-- hutool java工具类库  -->
+			<dependency>
+				<groupId>cn.hutool</groupId>
+				<artifactId>hutool-all</artifactId>
+				<version>${hutool.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-io</groupId>
+				<artifactId>commons-io</artifactId>
+				<version>${commons-io.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
-	<!--&lt;!&ndash; 子模块管理 &ndash;&gt;-->
-	<!--<modules>-->
-		<!--<module>user-service</module>-->
-		<!--<module>page-service</module>-->
-		<!--<module>home-service</module>-->
-		<!--<module>search-service</module>-->
-		<!--<module>statistics-service</module>-->
-		<!--<module>ask-service</module>-->
-		<!--<module>combination-service</module>-->
-		<!--<module>gateway-service</module>-->
-		<!--<module>nacos-service</module>-->
-		<!--<module>hjq-busines</module>-->
-		<!--<module>hjq-commons</module>-->
-	<!--</modules>-->
 
 	<!-- 子模块管理 -->
 	<modules>
