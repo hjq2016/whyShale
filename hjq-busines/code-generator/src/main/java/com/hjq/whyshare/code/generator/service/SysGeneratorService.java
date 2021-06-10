@@ -1,7 +1,7 @@
 package com.hjq.whyshare.code.generator.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.hjq.whyshare.common.model.PageResult;
+import com.hjq.whyshare.common.pojo.dto.PageResult;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

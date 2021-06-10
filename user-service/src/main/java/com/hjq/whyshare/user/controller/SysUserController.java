@@ -1,4 +1,4 @@
-package ${package}.${moduleName}.controller;
+package com.hjq.whyshare.user.controller;
 
 import java.util.Map;
 
@@ -10,24 +10,24 @@ import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 
-import ${package}.${moduleName}.pojo.dto.${className};
-import ${package}.${moduleName}.service.I${className}Service;
+import com.hjq.whyshare.user.pojo.dto.SysUser;
+import com.hjq.whyshare.user.service.ISysUserService;
 import com.hjq.whyshare.common.pojo.dto.PageResult;
 import com.hjq.whyshare.common.pojo.dto.Result;
 
 /**
- * ${comments}
+ * 
  *
- * @author ${author}
- * @date ${datetime}
+ * @author hjq
+ * @date 2021-06-10 18:24:05
  */
 @Slf4j
 @RestController
-@RequestMapping("/${pathName}")
-@Api(tags = "${comments}")
-public class ${className}Controller {
+@RequestMapping("/sysuser")
+@Api(tags = "")
+public class SysUserController {
     @Autowired
-    private I${className}Service ${classname}Service;
+    private ISysUserService sysUserService;
 
     /**
      * 列表
@@ -39,16 +39,16 @@ public class ${className}Controller {
     })
     @GetMapping
     public PageResult list(@RequestParam Map<String, Object> params) {
-        return ${classname}Service.findList(params);
+        return sysUserService.findList(params);
     }
 
     /**
      * 查询
      */
     @ApiOperation(value = "查询")
-    @GetMapping("/{${pk.attrname}}")
-    public Result findUserById(@PathVariable Long ${pk.attrname}) {
-        ${className} model = ${classname}Service.getById(${pk.attrname});
+    @GetMapping("/{id}")
+    public Result findUserById(@PathVariable Long id) {
+        SysUser model = sysUserService.getById(id);
         return Result.succeed(model, "查询成功");
     }
 
@@ -57,8 +57,8 @@ public class ${className}Controller {
      */
     @ApiOperation(value = "保存")
     @PostMapping
-    public Result save(@RequestBody ${className} ${classname}) {
-        ${classname}Service.saveOrUpdate(${classname});
+    public Result save(@RequestBody SysUser sysUser) {
+        sysUserService.saveOrUpdate(sysUser);
         return Result.succeed("保存成功");
     }
 
@@ -67,8 +67,8 @@ public class ${className}Controller {
      */
     @ApiOperation(value = "删除")
     @DeleteMapping("/{id}")
-    public Result delete(@PathVariable Long ${pk.attrname}) {
-        ${classname}Service.removeById(${pk.attrname});
+    public Result delete(@PathVariable Long id) {
+        sysUserService.removeById(id);
         return Result.succeed("删除成功");
     }
 }

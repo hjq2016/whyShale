@@ -1,4 +1,4 @@
-package com.hjq.whyshare.common.model;
+package com.hjq.whyshare.common.pojo.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

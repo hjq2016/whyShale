@@ -193,7 +193,7 @@ public class GenUtils {
         }
 
         if (template.contains(FILE_NAME_MODEL)) {
-            return packagePath + "model" + File.separator + className + ".java";
+            return packagePath + "pojo" + File.separator + "dto" + File.separator + className + ".java";
         }
 
         if (template.contains(FILE_NAME_MAPPER)) {

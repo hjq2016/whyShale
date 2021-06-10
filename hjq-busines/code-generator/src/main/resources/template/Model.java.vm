@@ -1,6 +1,6 @@
 package ${package}.${moduleName}.model;
 
-import ${package}.common.model.SuperEntity;
+import ${package}.common.pojo.dto.SuperEntity;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Getter;
 import lombok.Setter;

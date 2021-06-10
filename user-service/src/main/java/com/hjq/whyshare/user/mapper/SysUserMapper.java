@@ -1,6 +1,6 @@
-package ${package}.${moduleName}.mapper;
+package com.hjq.whyshare.user.mapper;
 
-import ${package}.${moduleName}.pojo.dto.${className};
+import com.hjq.whyshare.user.pojo.dto.SysUser;
 import com.hjq.whyshare.common.mapper.SuperMapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.apache.ibatis.annotations.Param;
@@ -10,18 +10,18 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * ${comments}
  * 
- * @author ${author}
- * @date ${datetime}
+ * 
+ * @author hjq
+ * @date 2021-06-10 18:24:05
  */
 @Mapper
-public interface ${className}Mapper extends SuperMapper<${className}> {
+public interface SysUserMapper extends SuperMapper<SysUser> {
     /**
      * 分页查询用户列表
      * @param page
      * @param params
      * @return
      */
-    List<${className}> findList(Page<${className}> page, @Param("p") Map<String, Object> params);
+    List<SysUser> findList(Page<SysUser> page, @Param("p") Map<String, Object> params);
 }
