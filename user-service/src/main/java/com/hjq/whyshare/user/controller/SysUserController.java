@@ -1,29 +1,27 @@
 package com.hjq.whyshare.user.controller;
 
-import java.util.Map;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import com.hjq.whyshare.common.pojo.dto.PageResult;
+import com.hjq.whyshare.common.pojo.dto.Result;
+import com.hjq.whyshare.user.pojo.dto.SysUser;
+import com.hjq.whyshare.user.pojo.query.SysUserQuery;
+import com.hjq.whyshare.user.service.ISysUserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
-import com.hjq.whyshare.user.pojo.dto.SysUser;
-import com.hjq.whyshare.user.service.ISysUserService;
-import com.hjq.whyshare.common.pojo.dto.PageResult;
-import com.hjq.whyshare.common.pojo.dto.Result;
+import java.util.Map;
 
 /**
- * 
- *
  * @author hjq
  * @date 2021-06-10 18:24:05
  */
 @Slf4j
 @RestController
-@RequestMapping("/sysuser")
+@RequestMapping("/users")
 @Api(tags = "")
 public class SysUserController {
     @Autowired
@@ -55,11 +53,23 @@ public class SysUserController {
     /**
      * 新增or更新
      */
-    @ApiOperation(value = "保存")
+    @ApiOperation(value = "注册用户")
     @PostMapping
-    public Result save(@RequestBody SysUser sysUser) {
-        sysUserService.saveOrUpdate(sysUser);
+    public Result register(@RequestBody SysUser sysUser) {
+        sysUserService.register(sysUser);
         return Result.succeed("保存成功");
+    }
+
+    @ApiOperation(value = "更新密码")
+    @PostMapping("/password")
+    public Result updatePassword(@RequestBody SysUserQuery.UpdatePasswordQuery query) {
+        boolean f = sysUserService.updatePassword("username", query.getUsername(), query.getOldPassword(), query.getPassword());
+        if (f) {
+            return Result.succeed("更新密码成功");
+        } else {
+            return Result.failed("更新密码失败");
+        }
+
     }
 
     /**

@@ -1,12 +1,15 @@
-#spring:
-#  cloud:
-#    nacos:
-#      discovery:
-#        server-addr: 127.0.0.1:8849
-#  application:
-#    name: ask-service
-#server:
-#  port: 1991
-#eureka:
-#  client:
-#    enabled: false
+eureka:
+  client:
+    enabled: false
+server:
+  port: 1991
+spring:
+  application:
+    name: ask-service
+  cloud:
+    nacos:
+      config:
+        prefix: ask-service
+        server-addr: 127.0.0.1:8848
+      discovery:
+        server-addr: 127.0.0.1:8848

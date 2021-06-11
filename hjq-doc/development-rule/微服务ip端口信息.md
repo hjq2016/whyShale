@@ -4,3 +4,4 @@
 * ask-service 1991
 * gateway-service 1992
 * code-generator 1993
+* user-service 1994

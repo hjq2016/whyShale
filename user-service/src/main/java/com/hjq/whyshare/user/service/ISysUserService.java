@@ -19,5 +19,11 @@ public interface ISysUserService extends ISuperService<SysUser> {
      * @return
      */
     PageResult<SysUser> findList(Map<String, Object> params);
+
+    void register(SysUser sysUser);
+
+    SysUser findByName(String username);
+
+    boolean updatePassword(String condition, String value, String oldPassword, String password);
 }
 

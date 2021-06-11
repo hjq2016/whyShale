@@ -16,6 +16,7 @@ import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.Velocity;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.nio.charset.StandardCharsets;
@@ -138,15 +139,24 @@ public class GenUtils {
         List<String> templates = getTemplates();
         for (String template : templates) {
             //渲染模板
+            String classpath = GenUtils.class.getResource("/").getPath() + File.separator;
+            log.info("classpath " + classpath);
             try (
-                    StringWriter sw = new StringWriter()
+                    StringWriter sw = new StringWriter();
             ) {
                 Template tpl = Velocity.getTemplate(template, "UTF-8");
                 tpl.merge(context, sw);
 
                 //添加到zip
+                String fileName = getFileName(template, tableEntity.getClassName(), config.getString(PACKAGE), config.getString(MODULE_NAME));
                 zip.putNextEntry(new ZipEntry(getFileName(template, tableEntity.getClassName(), config.getString(PACKAGE), config.getString(MODULE_NAME))));
                 IOUtils.write(sw.toString(), zip, StandardCharsets.UTF_8);
+                File file = new File(classpath + fileName);
+                file.getParentFile().mkdirs();
+                file.createNewFile();
+                FileWriter fileWriter = new FileWriter(classpath + fileName);
+                fileWriter.write(sw.toString());
+                fileWriter.close();
                 zip.closeEntry();
             } catch (IOException e) {
                 log.error("generatorCode-error", e);
