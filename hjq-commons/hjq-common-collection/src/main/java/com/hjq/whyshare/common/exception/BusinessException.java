@@ -1,5 +1,7 @@
 package com.hjq.whyshare.common.exception;
 
+import com.hjq.whyshare.common.enums.AliErrorCodeEnum;
+
 /**
  * 业务异常
  *
@@ -10,5 +12,9 @@ public class BusinessException extends RuntimeException {
 
     public BusinessException(String message) {
         super(message);
+    }
+
+    public BusinessException(AliErrorCodeEnum message) {
+        super(message.getDescription());
     }
 }

@@ -3,6 +3,7 @@ package com.hjq.whyshare.user.service;
 import com.hjq.whyshare.user.pojo.dto.SysUser;
 import com.hjq.whyshare.common.pojo.dto.PageResult;
 import com.hjq.whyshare.common.service.ISuperService;
+import com.hjq.whyshare.user.pojo.query.SysUserQuery;
 
 import java.util.Map;
 
@@ -20,9 +21,11 @@ public interface ISysUserService extends ISuperService<SysUser> {
      */
     PageResult<SysUser> findList(Map<String, Object> params);
 
-    void register(SysUser sysUser);
+    void register(SysUserQuery.RegisterQuery query);
 
     SysUser findByName(String username);
+
+    SysUser find(SysUser sysUser);
 
     boolean updatePassword(String condition, String value, String oldPassword, String password);
 }

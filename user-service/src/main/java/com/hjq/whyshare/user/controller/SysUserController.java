@@ -55,8 +55,8 @@ public class SysUserController {
      */
     @ApiOperation(value = "注册用户")
     @PostMapping
-    public Result register(@RequestBody SysUser sysUser) {
-        sysUserService.register(sysUser);
+    public Result register(@RequestBody SysUserQuery.RegisterQuery query) {
+        sysUserService.register(query);
         return Result.succeed("保存成功");
     }
 
@@ -81,4 +81,5 @@ public class SysUserController {
         sysUserService.removeById(id);
         return Result.succeed("删除成功");
     }
+
 }

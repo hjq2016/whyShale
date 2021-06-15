@@ -98,6 +98,6 @@ public class DefaultExceptionAdvice {
 
     private Result defHandler(String msg, Exception e) {
         log.error(msg, e);
-        return Result.failed(msg);
+        return Result.failed(e.getMessage());
     }
 }

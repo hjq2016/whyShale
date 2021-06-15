@@ -14,4 +14,9 @@ public class SysUserQuery {
         private String password;
         private String oldPassword;
     }
+    @Data
+    public static class RegisterQuery {
+        private String username;
+        private String password;
+    }
 }

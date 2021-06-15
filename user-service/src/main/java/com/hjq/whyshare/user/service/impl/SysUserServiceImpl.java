@@ -4,14 +4,18 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.hjq.whyshare.common.enums.AliErrorCodeEnum;
+import com.hjq.whyshare.common.exception.BusinessException;
 import com.hjq.whyshare.common.pojo.dto.PageResult;
 import com.hjq.whyshare.common.service.impl.SuperServiceImpl;
 import com.hjq.whyshare.user.mapper.SysUserMapper;
 import com.hjq.whyshare.user.pojo.dto.SysUser;
+import com.hjq.whyshare.user.pojo.query.SysUserQuery;
 import com.hjq.whyshare.user.service.ISysUserService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.MapUtils;
 import org.springframework.stereotype.Service;
+import sun.jvm.hotspot.asm.Register;
 
 import java.util.List;
 import java.util.Map;
@@ -37,7 +41,13 @@ public class SysUserServiceImpl extends SuperServiceImpl<SysUserMapper, SysUser>
     }
 
     @Override
-    public void register(SysUser sysUser) {
+    public void register(SysUserQuery.RegisterQuery query) {
+        if (findByName(query.getUsername()) != null) {
+            throw new BusinessException(AliErrorCodeEnum.USER_ERROR_A0111);
+        }
+        SysUser sysUser = new SysUser();
+        sysUser.setUsername(query.getUsername());
+        sysUser.setPassword(query.getPassword());
         this.save(sysUser);
     }
 
@@ -45,6 +55,18 @@ public class SysUserServiceImpl extends SuperServiceImpl<SysUserMapper, SysUser>
     public SysUser findByName(String username) {
         QueryWrapper queryWrapper = new QueryWrapper();
         queryWrapper.eq("username", username);
+        return getOne(queryWrapper);
+    }
+
+    @Override
+    public SysUser find(SysUser sysUser) {
+        QueryWrapper queryWrapper = new QueryWrapper();
+        if (sysUser.getUsername() != null) {
+            queryWrapper.eq("username", sysUser.getUsername());
+        }
+        if (sysUser.getPassword() != null) {
+            queryWrapper.eq("password", sysUser.getPassword());
+        }
         return getOne(queryWrapper);
     }
 
