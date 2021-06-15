@@ -11,6 +11,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.UUID;
+
 /**
  * @author hjq
  * @description
@@ -40,11 +42,11 @@ public class LoginServiceImpl implements ILoginService {
                 throw new BusinessException(AliErrorCodeEnum.USER_ERROR_A0210);
             }
         }
-
         //设置redis access_token
-        RedissonUtil.set("hjq2021", "600", 180);
-        String value = RedissonUtil.get("hjq2021");
-        log.info(value);
+        String accessToken = UUID.randomUUID().toString();
+        RedissonUtil.set(accessToken, findUser, 180);
+//        String value = RedissonUtil.get("hjq2021");
+//        log.info(value);
 
         return true;
     }

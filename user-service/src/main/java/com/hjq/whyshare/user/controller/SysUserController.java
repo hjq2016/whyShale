@@ -54,7 +54,7 @@ public class SysUserController {
      * 新增or更新
      */
     @ApiOperation(value = "注册用户")
-    @PostMapping
+    @PostMapping("/register")
     public Result register(@RequestBody SysUserQuery.RegisterQuery query) {
         sysUserService.register(query);
         return Result.succeed("保存成功");

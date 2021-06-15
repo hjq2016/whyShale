@@ -15,7 +15,6 @@ import com.hjq.whyshare.user.service.ISysUserService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.MapUtils;
 import org.springframework.stereotype.Service;
-import sun.jvm.hotspot.asm.Register;
 
 import java.util.List;
 import java.util.Map;
