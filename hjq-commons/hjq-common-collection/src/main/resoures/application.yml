@@ -1,11 +1,1 @@
-mybatis-plus:
-  mapper-locations: classpath:/mapper/*Mapper.xml
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-
-zlt:
-  datasource:
-    ip: 127.0.0.1
-    username: root
-    password: root
 

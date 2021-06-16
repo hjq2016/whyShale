@@ -14,8 +14,6 @@ import java.util.concurrent.TimeUnit;
  * @description
  * @date 2021/6/15
  */
-@Service
-@ConditionalOnProperty(value = "redis.whyshare.enable", havingValue = "true")
 @Slf4j
 public class RedissonUtil {
 

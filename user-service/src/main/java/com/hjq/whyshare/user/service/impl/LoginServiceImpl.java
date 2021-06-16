@@ -2,9 +2,11 @@ package com.hjq.whyshare.user.service.impl;
 
 import com.hjq.whyshare.common.enums.AliErrorCodeEnum;
 import com.hjq.whyshare.common.exception.BusinessException;
+import com.hjq.whyshare.common.util.JacksonUtils;
 import com.hjq.whyshare.common.util.RedissonUtil;
 import com.hjq.whyshare.user.pojo.dto.SysUser;
 import com.hjq.whyshare.user.pojo.query.LoginQuery;
+import com.hjq.whyshare.user.pojo.vo.LoginVo;
 import com.hjq.whyshare.user.service.ILoginService;
 import com.hjq.whyshare.user.service.ISysUserService;
 import lombok.extern.slf4j.Slf4j;
@@ -25,8 +27,10 @@ public class LoginServiceImpl implements ILoginService {
     @Autowired
     private ISysUserService sysUserService;
 
+    private static final long LOGIN_TIME = 60 * 60 * 24 * 3;
+
     @Override
-    public boolean login(LoginQuery.LoginMethodQuery query) {
+    public LoginVo.LoginMethodVo login(LoginQuery.LoginMethodQuery query) {
         SysUser sysUser = new SysUser();
         sysUser.setUsername(query.getUsername());
         sysUser.setPassword(query.getPassword());
@@ -44,10 +48,9 @@ public class LoginServiceImpl implements ILoginService {
         }
         //设置redis access_token
         String accessToken = UUID.randomUUID().toString();
-        RedissonUtil.set(accessToken, findUser, 180);
-//        String value = RedissonUtil.get("hjq2021");
-//        log.info(value);
-
-        return true;
+        RedissonUtil.set(accessToken, JacksonUtils.toJson(findUser), LOGIN_TIME);
+        LoginVo.LoginMethodVo vo = new LoginVo.LoginMethodVo();
+        vo.setAccessToken(accessToken);
+        return vo;
     }
 }

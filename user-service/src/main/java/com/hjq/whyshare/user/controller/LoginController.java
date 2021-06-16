@@ -1,9 +1,11 @@
 package com.hjq.whyshare.user.controller;
 
+import com.hjq.whyshare.common.constant.Constants;
 import com.hjq.whyshare.common.enums.AliErrorCodeEnum;
 import com.hjq.whyshare.common.exception.BusinessException;
 import com.hjq.whyshare.common.pojo.dto.Result;
 import com.hjq.whyshare.user.pojo.query.LoginQuery;
+import com.hjq.whyshare.user.pojo.vo.LoginVo;
 import com.hjq.whyshare.user.service.ILoginService;
 import com.hjq.whyshare.user.service.ISysUserService;
 import io.swagger.annotations.Api;
@@ -15,6 +17,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * @author hjq
@@ -33,11 +37,12 @@ public class LoginController {
 
     @ApiOperation(value = "登录")
     @PostMapping
-    public Result login(@RequestBody LoginQuery.LoginMethodQuery query) {
+    public Result login(HttpServletResponse response, @RequestBody LoginQuery.LoginMethodQuery query) {
         if (StringUtils.isBlank(query.getUsername()) || StringUtils.isBlank(query.getPassword())) {
             throw new BusinessException(AliErrorCodeEnum.USER_ERROR_A0200);
         }
-        loginService.login(query);
+        LoginVo.LoginMethodVo vo = loginService.login(query);
+        response.addHeader(Constants.ACCESS_TOKEN, vo.getAccessToken());
         return Result.succeed();
     }
 }

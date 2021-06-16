@@ -1,6 +1,7 @@
 package com.hjq.whyshare.user.service;
 
 import com.hjq.whyshare.user.pojo.query.LoginQuery;
+import com.hjq.whyshare.user.pojo.vo.LoginVo;
 
 /**
  * @author hjq
@@ -9,5 +10,5 @@ import com.hjq.whyshare.user.pojo.query.LoginQuery;
  */
 public interface ILoginService {
 
-    boolean login(LoginQuery.LoginMethodQuery query);
+    LoginVo.LoginMethodVo login(LoginQuery.LoginMethodQuery query);
 }

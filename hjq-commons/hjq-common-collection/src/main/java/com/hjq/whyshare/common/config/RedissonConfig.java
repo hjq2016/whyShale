@@ -1,13 +1,10 @@
-package com.hjq.whyshare.common.constant;
+package com.hjq.whyshare.common.config;
 
-import com.hjq.whyshare.common.exception.BusinessException;
 import lombok.extern.slf4j.Slf4j;
 import org.redisson.Redisson;
 import org.redisson.api.RedissonClient;
 import org.redisson.config.Config;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
 import java.io.File;
 import java.io.IOException;
@@ -17,9 +14,8 @@ import java.io.IOException;
  * @description
  * @date 2021/6/15
  */
-@Configuration
+
 @Slf4j
-@ConditionalOnProperty(value = "redis.whyshare.enable", havingValue = "true")
 public class RedissonConfig {
 
     @Bean
