@@ -10,4 +10,6 @@ public interface Constants {
     String ENCODE = "UTF-8";
 
     String ACCESS_TOKEN = "accessToken";
+
+    String USER_SERVICE = "user-service";
 }

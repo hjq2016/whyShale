@@ -1,5 +1,6 @@
 package com.hjq.whyshare.common.annotation;
 
+import com.hjq.whyshare.common.config.RedissonConfig;
 import com.hjq.whyshare.common.util.RedissonUtil;
 import org.springframework.context.annotation.Import;
 
@@ -15,7 +16,7 @@ import java.lang.annotation.Target;
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-@Import({RedissonUtil.class})
+@Import({RedissonUtil.class, RedissonConfig.class})
 public @interface EnableRedissonUse {
 
 }

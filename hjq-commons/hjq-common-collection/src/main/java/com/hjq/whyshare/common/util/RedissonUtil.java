@@ -3,10 +3,7 @@ package com.hjq.whyshare.common.util;
 import lombok.extern.slf4j.Slf4j;
 import org.redisson.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
-import org.springframework.stereotype.Service;
 
-import javax.annotation.PostConstruct;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -23,12 +20,12 @@ public class RedissonUtil {
 
     @Autowired
     private RedissonUtil(RedissonClient redissonClient) {
-        log.info(redissonClient.toString());
         this.redissonClient = redissonClient;
     }
 
     /**
      * 设置key-value expire时间
+     *
      * @param key
      * @param value
      * @param time
@@ -41,6 +38,7 @@ public class RedissonUtil {
 
     /**
      * 删除缓存
+     *
      * @param key
      */
     public static void del(String key) {
@@ -50,6 +48,7 @@ public class RedissonUtil {
 
     /**
      * 获取缓存
+     *
      * @param key
      * @param <T>
      * @return
@@ -61,6 +60,7 @@ public class RedissonUtil {
 
     /**
      * 获取字节流
+     *
      * @param key
      * @param
      * @return
@@ -72,6 +72,7 @@ public class RedissonUtil {
 
     /**
      * 设置key-value expire时间
+     *
      * @param key
      * @param value
      * @param <T>
@@ -82,6 +83,7 @@ public class RedissonUtil {
 
     /**
      * 设置字节流
+     *
      * @param key
      * @param
      * @return
@@ -93,6 +95,7 @@ public class RedissonUtil {
 
     /**
      * 是否存在
+     *
      * @param key
      * @return
      */
@@ -103,6 +106,7 @@ public class RedissonUtil {
 
     /**
      * 获取分布式锁 阻塞接口
+     *
      * @param lockName
      * @param leaseTime
      * @return
@@ -114,6 +118,7 @@ public class RedissonUtil {
 
     /**
      * 尝试获取锁 (无等待时间)
+     *
      * @param lockName
      * @param leaseTime
      * @return
@@ -130,6 +135,7 @@ public class RedissonUtil {
 
     /**
      * 尝试获取锁 (有等待时间)
+     *
      * @param lockName
      * @param leaseTime
      * @param waitTime
@@ -147,6 +153,7 @@ public class RedissonUtil {
 
     /**
      * 释放锁
+     *
      * @param lockName
      * @return
      */
@@ -157,7 +164,8 @@ public class RedissonUtil {
 
     /**
      * 判断该线程是否持有当前锁
-     * @param lockName  锁名称
+     *
+     * @param lockName 锁名称
      */
     public boolean isHeldByCurrentThread(String lockName) {
         RLock rLock = redissonClient.getLock(lockName);
@@ -166,6 +174,7 @@ public class RedissonUtil {
 
     /**
      * 获取递增值
+     *
      * @param key
      * @return
      */

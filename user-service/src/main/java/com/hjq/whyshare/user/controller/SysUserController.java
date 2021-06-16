@@ -2,6 +2,7 @@ package com.hjq.whyshare.user.controller;
 
 import com.hjq.whyshare.common.pojo.dto.PageResult;
 import com.hjq.whyshare.common.pojo.dto.Result;
+import com.hjq.whyshare.common.util.RedissonUtil;
 import com.hjq.whyshare.user.pojo.dto.SysUser;
 import com.hjq.whyshare.user.pojo.query.SysUserQuery;
 import com.hjq.whyshare.user.service.ISysUserService;
@@ -80,6 +81,16 @@ public class SysUserController {
     public Result delete(@PathVariable Long id) {
         sysUserService.removeById(id);
         return Result.succeed("删除成功");
+    }
+
+    @GetMapping(value = "accessToken")
+    public Result getUserByToken(String accessToken) {
+        log.info("getUserByToken, accessToken = " + accessToken);
+        String user = RedissonUtil.get(accessToken);
+        if (null == user) {
+            return Result.failed("获取user缓存失败");
+        }
+        return Result.succeed(user);
     }
 
 }

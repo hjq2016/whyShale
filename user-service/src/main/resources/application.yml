@@ -26,6 +26,6 @@ zlt:
 #    username: hjq
 #    password: hjq@HJQ2020
 
-redis:
-  whyshare:
-    enable: true
+#redis:
+#  whyshare:
+#    enable: true
