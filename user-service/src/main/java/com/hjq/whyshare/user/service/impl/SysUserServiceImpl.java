@@ -9,7 +9,7 @@ import com.hjq.whyshare.common.exception.BusinessException;
 import com.hjq.whyshare.common.pojo.dto.PageResult;
 import com.hjq.whyshare.common.service.impl.SuperServiceImpl;
 import com.hjq.whyshare.user.mapper.SysUserMapper;
-import com.hjq.whyshare.user.pojo.dto.SysUser;
+import com.hjq.whyshare.common.pojo.dto.SysUser;
 import com.hjq.whyshare.user.pojo.query.SysUserQuery;
 import com.hjq.whyshare.user.service.ISysUserService;
 import lombok.extern.slf4j.Slf4j;

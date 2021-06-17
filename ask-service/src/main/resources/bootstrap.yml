@@ -1,6 +1,10 @@
+server:
+  port: 1991
+  servlet:
+      context-path: /askService
 spring:
   application:
-    name: user-service
+    name: ask-service
   cloud:
     nacos:
       config:
@@ -11,7 +15,3 @@ spring:
           refresh: true
       discovery:
         server-addr: 127.0.0.1:8848
-server:
-  port: 1994
-  servlet:
-    context-path: /userService

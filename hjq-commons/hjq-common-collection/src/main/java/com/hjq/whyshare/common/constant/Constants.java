@@ -12,4 +12,6 @@ public interface Constants {
     String ACCESS_TOKEN = "accessToken";
 
     String USER_SERVICE = "user-service";
+
+    String REQUEST_USER_ATTRIBUTE = "user";
 }

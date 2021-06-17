@@ -261,7 +261,20 @@ public enum AliErrorCodeEnum {
     SERVICE_ERROR_C0500("C0500", "通知服务出错"),
     SERVICE_ERROR_C0501("C0501", "短信提醒服务失败"),
     SERVICE_ERROR_C0502("C0502", "语音提醒服务失败"),
-    SERVICE_ERROR_C0503("C0503", "邮件提醒服务失败");
+    SERVICE_ERROR_C0503("C0503", "邮件提醒服务失败"),
+
+
+    /**
+     * 调用提问服务
+     * 一级宏观错误码
+     */
+    SERVICE_ERROR_D0001("D0001", "调用提问服务出错"),
+    /**
+     * 二级宏观错误码
+     */
+    SERVICE_ERROR_D0100("D0100", "提问不存在"),
+
+    ;
 
     private final String code;
 

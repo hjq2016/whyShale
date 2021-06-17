@@ -1,4 +1,4 @@
-package com.hjq.whyshare.user.pojo.dto;
+package com.hjq.whyshare.common.pojo.dto;
 
 import com.hjq.whyshare.common.pojo.dto.SuperEntity;
 import com.baomidou.mybatisplus.annotation.TableName;

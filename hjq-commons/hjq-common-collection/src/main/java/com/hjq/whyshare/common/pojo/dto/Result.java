@@ -27,7 +27,11 @@ public class Result<T> implements Serializable {
     }
 
     public static <T> Result<T> succeed(T model) {
-        return of(model, CodeEnum.SUCCESS.getCode(), "");
+        return of(model, CodeEnum.SUCCESS.getCode(), "ok");
+    }
+
+    public static <T> Result<T> succeedData(T model) {
+        return of(model, CodeEnum.SUCCESS.getCode(), "ok");
     }
 
     public static <T> Result<T> succeed() {

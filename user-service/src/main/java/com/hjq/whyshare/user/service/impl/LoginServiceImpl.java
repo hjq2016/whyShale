@@ -4,7 +4,7 @@ import com.hjq.whyshare.common.enums.AliErrorCodeEnum;
 import com.hjq.whyshare.common.exception.BusinessException;
 import com.hjq.whyshare.common.util.JacksonUtils;
 import com.hjq.whyshare.common.util.RedissonUtil;
-import com.hjq.whyshare.user.pojo.dto.SysUser;
+import com.hjq.whyshare.common.pojo.dto.SysUser;
 import com.hjq.whyshare.user.pojo.query.LoginQuery;
 import com.hjq.whyshare.user.pojo.vo.LoginVo;
 import com.hjq.whyshare.user.service.ILoginService;

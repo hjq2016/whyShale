@@ -3,7 +3,7 @@ package com.hjq.whyshare.user.controller;
 import com.hjq.whyshare.common.pojo.dto.PageResult;
 import com.hjq.whyshare.common.pojo.dto.Result;
 import com.hjq.whyshare.common.util.RedissonUtil;
-import com.hjq.whyshare.user.pojo.dto.SysUser;
+import com.hjq.whyshare.common.pojo.dto.SysUser;
 import com.hjq.whyshare.user.pojo.query.SysUserQuery;
 import com.hjq.whyshare.user.service.ISysUserService;
 import io.swagger.annotations.Api;
@@ -90,7 +90,7 @@ public class SysUserController {
         if (null == user) {
             return Result.failed("获取user缓存失败");
         }
-        return Result.succeed(user);
+        return Result.succeedData(user);
     }
 
 }

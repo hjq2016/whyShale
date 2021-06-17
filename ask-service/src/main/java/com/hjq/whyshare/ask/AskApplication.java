@@ -8,15 +8,10 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "com.hjq.whyshare")
 @EnableDiscoveryClient
-@EnableFeignClients
+@EnableFeignClients(basePackages = "com.hjq.whyshare")
 public class AskApplication {
-	@LoadBalanced
-	@Bean
-	public RestTemplate restTemplate() {
-		return new RestTemplate();
-	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(AskApplication.class, args);

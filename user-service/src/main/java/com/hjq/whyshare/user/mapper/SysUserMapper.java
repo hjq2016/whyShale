@@ -1,6 +1,6 @@
 package com.hjq.whyshare.user.mapper;
 
-import com.hjq.whyshare.user.pojo.dto.SysUser;
+import com.hjq.whyshare.common.pojo.dto.SysUser;
 import com.hjq.whyshare.common.mapper.SuperMapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.apache.ibatis.annotations.Param;

@@ -41,6 +41,10 @@
 			<groupId>com.hjq</groupId>
 			<artifactId>hjq-common-collection</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>io.github.openfeign</groupId>
+			<artifactId>feign-httpclient</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
