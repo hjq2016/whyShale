@@ -5,7 +5,9 @@ package com.hjq.whyshare.common.pojo.dto;
  */
 public enum CodeEnum {
     SUCCESS(0),
-    ERROR(1);
+    ERROR(1),
+    LOGIN_ERROR(2);
+    ;
 
     private Integer code;
     CodeEnum(Integer code){

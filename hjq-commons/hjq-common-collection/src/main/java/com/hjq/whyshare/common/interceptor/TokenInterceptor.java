@@ -44,7 +44,7 @@ public class TokenInterceptor implements HandlerInterceptor {
         if (0 != result.getResp_code()) {
             throw new BusinessException(AliErrorCodeEnum.USER_ERROR_A0300);
         }
-        SysUser sysUser = JacksonUtils.toObj(result.getDatas(), SysUser.class);
+        SysUser sysUser = JacksonUtils.toObj(result.getData(), SysUser.class);
         request.setAttribute(Constants.REQUEST_USER_ATTRIBUTE, sysUser);
         return true;
     }

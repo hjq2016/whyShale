@@ -13,12 +13,24 @@ spring:
         - id: ask-service
           uri: lb://ask-service
           predicates:
-            - Path=/ask/**
+            - Path=/askService/**
           filters:
-            - StripPrefix=1
+            - StripPrefix=0
         - id: home-service
           uri: lb://home-service
           predicates:
-            - Path=/home/**
+            - Path=/homeService/**
           filters:
-            - StripPrefix=1
+            - StripPrefix=0
+        - id: user-service
+          uri: lb://user-service
+          predicates:
+            - Path=/userService/**
+          filters:
+            - StripPrefix=0
+        - id: page-service
+          uri: lb://page-service
+          predicates:
+            - Path=/pageService/**
+          filters:
+            - StripPrefix=0

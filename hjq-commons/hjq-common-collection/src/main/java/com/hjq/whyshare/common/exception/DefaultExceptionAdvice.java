@@ -70,7 +70,7 @@ public class DefaultExceptionAdvice {
      * BusinessException 业务异常处理
      * 返回状态码:500
      */
-    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    @ResponseStatus(HttpStatus.OK)
     @ExceptionHandler(BusinessException.class)
     public Result handleException(BusinessException e) {
         return defHandler("业务异常", e);

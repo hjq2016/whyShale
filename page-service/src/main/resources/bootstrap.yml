@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: page-service
+  cloud:
+    nacos:
+      config:
+        file-extension: yml
+        server-addr: 127.0.0.1:8848
+        shared-configs[0]:
+          data-id: whyshare-config-share.yml
+          refresh: true
+      discovery:
+        server-addr: 127.0.0.1:8848
+server:
+  port: 1995
+  servlet:
+    context-path: /pageService
