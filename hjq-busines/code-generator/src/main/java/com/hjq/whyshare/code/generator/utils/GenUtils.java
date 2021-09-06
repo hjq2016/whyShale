@@ -3,7 +3,7 @@ package com.hjq.whyshare.code.generator.utils;
 import cn.hutool.core.date.DateUtil;
 import com.hjq.whyshare.code.generator.modle.ColumnEntity;
 import com.hjq.whyshare.code.generator.modle.TableEntity;
-import com.hjq.whyshare.common.constant.CommonConstant;
+import com.hjq.whyshare.commons.constant.CommonConstant;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.configuration.Configuration;
 import org.apache.commons.configuration.ConfigurationException;
@@ -140,7 +140,7 @@ public class GenUtils {
         for (String template : templates) {
             //渲染模板
             String classpath = GenUtils.class.getResource("/").getPath() + File.separator;
-            log.info("classpath " + classpath);
+//            log.info("classpath " + classpath);
             try (
                     StringWriter sw = new StringWriter();
             ) {
@@ -155,6 +155,7 @@ public class GenUtils {
                 file.getParentFile().mkdirs();
                 file.createNewFile();
                 FileWriter fileWriter = new FileWriter(classpath + fileName);
+                log.info("" + classpath + fileName);
                 fileWriter.write(sw.toString());
                 fileWriter.close();
                 zip.closeEntry();

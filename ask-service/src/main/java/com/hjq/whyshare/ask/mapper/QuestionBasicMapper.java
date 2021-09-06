@@ -1,7 +1,7 @@
 package com.hjq.whyshare.ask.mapper;
 
 import com.hjq.whyshare.ask.pojo.dto.QuestionBasic;
-import com.hjq.whyshare.common.mapper.SuperMapper;
+import com.hjq.whyshare.commons.mapper.SuperMapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Mapper;

@@ -1,9 +1,9 @@
 package com.hjq.whyshare.ask.service.impl;
 
 import org.springframework.stereotype.Service;
-import com.hjq.whyshare.common.pojo.dto.PageResult;
+import com.hjq.whyshare.commons.pojo.dto.PageResult;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.hjq.whyshare.common.service.impl.SuperServiceImpl;
+import com.hjq.whyshare.commons.service.impl.SuperServiceImpl;
 
 import java.util.List;
 import java.util.Map;

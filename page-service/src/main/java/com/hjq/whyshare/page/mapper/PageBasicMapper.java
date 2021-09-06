@@ -1,7 +1,7 @@
 package com.hjq.whyshare.page.mapper;
 
 import com.hjq.whyshare.page.pojo.dto.PageBasic;
-import com.hjq.whyshare.common.mapper.SuperMapper;
+import com.hjq.whyshare.commons.mapper.SuperMapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Mapper;
@@ -24,4 +24,6 @@ public interface PageBasicMapper extends SuperMapper<PageBasic> {
      * @return
      */
     List<PageBasic> findList(Page<PageBasic> page, @Param("p") Map<String, Object> params);
+
+    void pageAgreeHandle(@Param("id")Long id, @Param("agree")int agree);
 }

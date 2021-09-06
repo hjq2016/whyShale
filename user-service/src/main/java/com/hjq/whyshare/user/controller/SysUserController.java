@@ -1,9 +1,9 @@
 package com.hjq.whyshare.user.controller;
 
-import com.hjq.whyshare.common.pojo.dto.PageResult;
-import com.hjq.whyshare.common.pojo.dto.Result;
-import com.hjq.whyshare.common.util.RedissonUtil;
-import com.hjq.whyshare.common.pojo.dto.SysUser;
+import com.hjq.whyshare.commons.pojo.dto.PageResult;
+import com.hjq.whyshare.commons.pojo.dto.Result;
+import com.hjq.whyshare.commons.util.RedissonUtil;
+import com.hjq.whyshare.commons.pojo.dto.SysUser;
 import com.hjq.whyshare.user.pojo.query.SysUserQuery;
 import com.hjq.whyshare.user.service.ISysUserService;
 import io.swagger.annotations.Api;

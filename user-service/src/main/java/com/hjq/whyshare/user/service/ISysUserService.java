@@ -1,8 +1,8 @@
 package com.hjq.whyshare.user.service;
 
-import com.hjq.whyshare.common.pojo.dto.SysUser;
-import com.hjq.whyshare.common.pojo.dto.PageResult;
-import com.hjq.whyshare.common.service.ISuperService;
+import com.hjq.whyshare.commons.pojo.dto.SysUser;
+import com.hjq.whyshare.commons.pojo.dto.PageResult;
+import com.hjq.whyshare.commons.service.ISuperService;
 import com.hjq.whyshare.user.pojo.query.SysUserQuery;
 
 import java.util.Map;

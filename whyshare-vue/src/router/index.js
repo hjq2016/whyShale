@@ -8,10 +8,52 @@ const routes = [
     {
         path: '/home',
         name: 'home',
-        component: () => import('@/views/Navbar.vue'),
+        component: () => import('@/views/home.vue'),
         meta: {
             index: 1
-        }
+        },
+        children: [
+            {
+                path: '',
+                component: () => import('@/views/pageList.vue'),
+            },
+            {
+                path: '/personalHome',
+                name: 'personalHome',
+                component: () => import('@/views/PersonalHome.vue'),
+                meta: {
+                    index: 2
+                }
+            },
+            {
+                path: '/creator',
+                name: 'creator',
+                component: () => import('@/views/Creator.vue'),
+                meta: {
+                    index: 1
+                }
+            },
+            {
+                path: '/write',
+                name: 'write',
+                component: () => import('@/views/Write.vue'),
+                meta: {
+                    index: 2
+                }
+            },
+            {
+                path: '/test/router',
+                component: () => import('@/test/views/RouterTest.vue'),
+                meta: {
+                    index: 1
+                }
+            },
+            {
+                path: '/test/router1',
+                component: () => import('@/test/views/RouterTest1.vue'),
+            }
+        ]
+
     },
     {
         path: '/login',
@@ -29,43 +71,7 @@ const routes = [
             index: 1
         }
     },
-    {
-        path: '/personalHome',
-        name: 'personalHome',
-        component: () => import('@/views/PersonalHome.vue'),
-        meta: {
-            index: 2
-        }
-    },
-    {
-        path: '/creator',
-        name: 'creator',
-        component: () => import('@/views/Creator.vue'),
-        meta: {
-            index: 1
-        }
-    },
-    {
-        path: '/write',
-        name: 'write',
-        component: () => import('@/views/Write.vue'),
-        meta: {
-            index: 2
-        }
-    },
 
-
-    {
-        path: '/test/router',
-        component: () => import('@/test/views/RouterTest.vue'),
-        meta: {
-            index: 1
-        }
-    },
-    {
-        path: '/test/router1',
-        component: () => import('@/test/views/RouterTest1.vue'),
-    }
 ];
 
 const router = createRouter({

@@ -13,5 +13,7 @@
     <modules>
         <!-- 代码生成器 -->
         <module>hjq-common-collection</module>
+        <module>common-test</module>
+
     </modules>
 </project>

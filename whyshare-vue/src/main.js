@@ -9,6 +9,7 @@ import { Search } from 'vant';
 import { DropdownMenu, DropdownItem } from 'vant';
 import { Sidebar, SidebarItem } from 'vant';
 import  {Pagination} from 'vant'
+import installElementPlus from './plugins/element'
 
 
 
@@ -59,5 +60,7 @@ app.use(DropdownMenu)
 app.use(DropdownItem)
 app.use(Sidebar)
 app.use(SidebarItem)
+
+app.use(installElementPlus)
 
 app.mount('#app');

@@ -6,33 +6,42 @@
         <span class="app-name">{{ constant.WHY_SHARE }}</span>
       </router-link>
       <div class="home-items">
-        <van-row type="flex" gutter="20">
-          <van-col span="6">首页</van-col>
-          <van-col span="6">发现</van-col>
-          <van-col span="12">等你来答</van-col>
-        </van-row>
+        <el-row>
+          <el-col :span="12">首页</el-col>
+          <el-col :span="12">看看</el-col>
+        </el-row>
       </div>
-      <van-search v-model="searchValue" placeholder="请输入搜索关键词" show-action/>
-      <div>
-        <van-button type="default" color="#7232dd" round="true" size="small" text="提问"></van-button>
-        <router-link tag="i" to="/login">
-          <van-button type="default" color="#7232dd" round="true" size="small" text="登录or注册"></van-button>
-        </router-link>
-      </div>
-      <div>
-        <van-icon name="chat-o" size="40"/>
-      </div>
-      <div>
-        <router-link tag="i" to="/personalHome">
-          <van-button type="default" color="#7232dd" round="true" size="small" text="我的首页"></van-button>
-        </router-link>
-        <router-link tag="i" to="/creator">
-          <van-button type="default" color="#7232dd" round="true" size="small" text="创作中心"></van-button>
-        </router-link>
-      </div>
+      <el-input
+          style="width: 30%"
+          placeholder="请输入搜索关键词"
+          suffix-icon="el-icon-search"
+          v-model="searchValue">
+      </el-input>
+      <router-link tag="i" to="/login">
+        <el-button type="success" round>登录or注册</el-button>
+      </router-link>
+      <el-dropdown>
+        <el-button type="primary">
+          用户名字<i class="el-icon-arrow-down el-icon--right"></i>
+        </el-button>
+        <template #dropdown>
+          <el-dropdown-menu>
+            <el-dropdown-item>
+              <router-link tag="i" to="/personalHome">
+                <el-button round>我的首页</el-button>
+              </router-link>
+            </el-dropdown-item>
+            <el-dropdown-item>
+              <router-link tag="i" to="/creator">
+                <el-button round>创作中心</el-button>
+              </router-link>
+            </el-dropdown-item>
+          </el-dropdown-menu>
+        </template>
+      </el-dropdown>
     </header>
-    <!--    <nav-bar />-->
-    <!--    <swiper :list="swiperList"></swiper>-->
+
+
   </div>
 </template>
 
@@ -48,7 +57,7 @@ import constant from '@/constant'
 import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
-  name: 'home',
+  name: 'navbar',
   components: {
     HelloWorld
   },

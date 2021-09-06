@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.hjq.whyshare.user.mapper.SysUserMapper">
-    <select id="findList" resultType="com.hjq.whyshare.common.pojo.dto.SysUser">
+    <select id="findList" resultType="com.hjq.whyshare.commons.pojo.dto.SysUser">
         select * from sys_user t
     </select>
 </mapper>

@@ -5,7 +5,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.hjq.whyshare.code.generator.mapper.SysGeneratorMapper;
 import com.hjq.whyshare.code.generator.service.SysGeneratorService;
 import com.hjq.whyshare.code.generator.utils.GenUtils;
-import com.hjq.whyshare.common.pojo.dto.PageResult;
+import com.hjq.whyshare.commons.pojo.dto.PageResult;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.MapUtils;
 import org.springframework.beans.factory.annotation.Autowired;

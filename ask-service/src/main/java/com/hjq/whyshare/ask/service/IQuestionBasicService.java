@@ -1,8 +1,8 @@
 package com.hjq.whyshare.ask.service;
 
 import com.hjq.whyshare.ask.pojo.dto.QuestionBasic;
-import com.hjq.whyshare.common.pojo.dto.PageResult;
-import com.hjq.whyshare.common.service.ISuperService;
+import com.hjq.whyshare.commons.pojo.dto.PageResult;
+import com.hjq.whyshare.commons.service.ISuperService;
 
 import java.util.Map;
 

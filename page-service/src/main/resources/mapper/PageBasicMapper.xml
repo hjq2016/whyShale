@@ -5,4 +5,10 @@
     <select id="findList" resultType="com.hjq.whyshare.page.pojo.dto.PageBasic">
         select * from page_basic t
     </select>
+    
+    <update id="pageAgreeHandle">
+        update page_basic
+        set agree = #{agree}
+        where id = #{id};
+    </update>
 </mapper>

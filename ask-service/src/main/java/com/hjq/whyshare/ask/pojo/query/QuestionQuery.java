@@ -1,6 +1,5 @@
 package com.hjq.whyshare.ask.pojo.query;
 
-import com.hjq.whyshare.common.util.JacksonUtils;
 import lombok.Data;
 
 /**

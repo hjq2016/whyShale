@@ -1,6 +1,6 @@
 package com.hjq.whyshare.ask.pojo.dto;
 
-import com.hjq.whyshare.common.pojo.dto.SuperEntity;
+import com.hjq.whyshare.commons.pojo.dto.SuperEntity;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Getter;
 import lombok.Setter;

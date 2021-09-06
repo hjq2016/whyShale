@@ -10,7 +10,9 @@
   "dependencies": {
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
+    "element-plus": "^1.0.2-beta.28",
     "lib-flexible": "^0.3.2",
+    "postcss": "^8.3.6",
     "vant": "^3.1.1",
     "vue": "^3.0.0",
     "vue-router": "^4.0.10"
@@ -26,7 +28,10 @@
     "eslint-plugin-vue": "^7.0.0",
     "less": "^3.12.2",
     "less-loader": "^7.0.2",
-    "postcss-pxtorem": "^5.1.1"
+    "postcss-pxtorem": "^5.1.1",
+    "sass": "^1.27.0",
+    "sass-loader": "^10.0.4",
+    "vue-cli-plugin-element-plus": "0.0.13"
   },
   "eslintConfig": {
     "root": true,

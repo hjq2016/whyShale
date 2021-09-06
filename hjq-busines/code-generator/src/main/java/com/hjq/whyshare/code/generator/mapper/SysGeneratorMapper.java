@@ -1,7 +1,7 @@
 package com.hjq.whyshare.code.generator.mapper;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.hjq.whyshare.common.mapper.SuperMapper;
+import com.hjq.whyshare.commons.mapper.SuperMapper;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Component;

@@ -1,22 +1,19 @@
 package com.hjq.whyshare.ask.controller;
 
-import cn.hutool.http.HttpUtil;
 import com.hjq.whyshare.ask.pojo.dto.QuestionBasic;
 import com.hjq.whyshare.ask.pojo.query.QuestionQuery;
 import com.hjq.whyshare.ask.pojo.vo.QuestionVo;
 import com.hjq.whyshare.ask.service.IQuestionBasicService;
-import com.hjq.whyshare.common.enums.AliErrorCodeEnum;
-import com.hjq.whyshare.common.exception.BusinessException;
-import com.hjq.whyshare.common.pojo.dto.Result;
-import com.hjq.whyshare.common.pojo.dto.SysUser;
-import com.hjq.whyshare.common.util.LoginUserUtil;
+import com.hjq.whyshare.commons.enums.AliErrorCodeEnum;
+import com.hjq.whyshare.commons.exception.BusinessException;
+import com.hjq.whyshare.commons.pojo.dto.Result;
+import com.hjq.whyshare.commons.pojo.dto.SysUser;
+import com.hjq.whyshare.commons.util.LoginUserUtil;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import javax.servlet.http.HttpServletRequest;
 
 /**
  * @author hjq

@@ -1,5 +1,4 @@
 <template>
-  <navBar></navBar>
   <div style="display: flex">
     <div style="width: 15%">
       <van-cell-group>
@@ -36,8 +35,8 @@ export default {
   data() {
     return {
       activeKey: 0,
-      collapse1Show:false,
-      collapse2Show:false,
+      collapse1Show:true,
+      collapse2Show:true,
       currentComponent:'contentManager'
     };
   },
